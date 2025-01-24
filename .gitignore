@@ -2,4 +2,5 @@ db.sqlite3
 __pycache__/
 *.pyc
 /rango/tests_chapter3.py
+/rango/tests_chapter4.py
 

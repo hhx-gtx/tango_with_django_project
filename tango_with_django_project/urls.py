@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include  # 导入 include 函数
 from rango import views  # 导入 rango 应用的视图
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),  # 根 URL 映射到 index 视图
     path('rango/', include('rango.urls')),  # rango 应用的 URL 转交给 rango.urls
     path('admin/', admin.site.urls),
     # path('about/', include('rango.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
